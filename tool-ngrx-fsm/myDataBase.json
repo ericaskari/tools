@@ -1,0 +1,215 @@
+{
+    "v1": {
+        "collections": {
+            "actionUnits": {
+                "fd1c0f90-e551-4ebc-92f8-054d467d24a3": {
+                    "id": "fd1c0f90-e551-4ebc-92f8-054d467d24a3",
+                    "name": "GetAllUsers",
+                    "inputInterfaceId": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231"
+                },
+                "b344ffe4-c0c0-4d4c-893d-9990f8e71d0a": {
+                    "id": "b344ffe4-c0c0-4d4c-893d-9990f8e71d0a",
+                    "name": "GetAllUsersSuccess2",
+                    "inputInterfaceId": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231"
+                },
+                "f0a59ac3-22db-48cc-b56c-bcffbe51617b": {
+                    "id": "f0a59ac3-22db-48cc-b56c-bcffbe51617b",
+                    "name": "GetAllUsersFail",
+                    "inputInterfaceId": "898d09c6-7aaf-4cf6-a590-1f53323350a1"
+                },
+                "c6dd6604-8922-451a-985a-cbf92375fd17": {
+                    "id": "c6dd6604-8922-451a-985a-cbf92375fd17",
+                    "name": "UnNamed Action",
+                    "inputInterfaceId": null
+                },
+                "08785a95-fbff-4608-8f1c-061286fa43af": {
+                    "id": "08785a95-fbff-4608-8f1c-061286fa43af",
+                    "name": "UnNamed Action",
+                    "inputInterfaceId": null
+                },
+                "0068862b-8bc3-41e6-b8ef-023eb794c17e": {
+                    "id": "0068862b-8bc3-41e6-b8ef-023eb794c17e",
+                    "name": "UnNamed Action",
+                    "inputInterfaceId": null
+                },
+                "4b10b1d5-b2be-47d3-9261-4d42b5ff2b65": {
+                    "id": "4b10b1d5-b2be-47d3-9261-4d42b5ff2b65",
+                    "name": "UnNamed Action",
+                    "inputInterfaceId": null
+                }
+            },
+            "actionUnitInstances": {
+                "28b5823b-3988-44b7-a039-d7b53b345ad5": {
+                    "id": "28b5823b-3988-44b7-a039-d7b53b345ad5",
+                    "positionY": 50,
+                    "positionX": 100,
+                    "actionUnitId": "fd1c0f90-e551-4ebc-92f8-054d467d24a3",
+                    "width": 400,
+                    "height": 100,
+                    "actionUnit": {
+                        "id": "fd1c0f90-e551-4ebc-92f8-054d467d24a3",
+                        "name": "GetAllUsers",
+                        "inputInterfaceId": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                        "inputInterface": {
+                            "id": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                            "name": "UserModelHello",
+                            "path": "./types"
+                        }
+                    }
+                },
+                "9eee33ad-e626-45cc-b434-12e96c625b06": {
+                    "id": "9eee33ad-e626-45cc-b434-12e96c625b06",
+                    "positionY": 200,
+                    "positionX": 900,
+                    "actionUnitId": "b344ffe4-c0c0-4d4c-893d-9990f8e71d0a",
+                    "width": 400,
+                    "height": 100,
+                    "actionUnit": {
+                        "id": "b344ffe4-c0c0-4d4c-893d-9990f8e71d0a",
+                        "name": "GetAllUsersSuccess2",
+                        "inputInterfaceId": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                        "inputInterface": {
+                            "id": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                            "name": "UserModelHello",
+                            "path": "./types"
+                        }
+                    }
+                },
+                "68ffe277-6b2b-494d-bc6e-dc3d3a70f057": {
+                    "id": "68ffe277-6b2b-494d-bc6e-dc3d3a70f057",
+                    "positionY": 300,
+                    "positionX": 1450,
+                    "actionUnitId": "f0a59ac3-22db-48cc-b56c-bcffbe51617b",
+                    "width": 400,
+                    "height": 100,
+                    "actionUnit": {
+                        "id": "f0a59ac3-22db-48cc-b56c-bcffbe51617b",
+                        "name": "GetAllUsersFail",
+                        "inputInterfaceId": "898d09c6-7aaf-4cf6-a590-1f53323350a1",
+                        "inputInterface": {
+                            "id": "898d09c6-7aaf-4cf6-a590-1f53323350a1",
+                            "name": "EndpointErrorModel",
+                            "path": "./types"
+                        }
+                    }
+                }
+            },
+            "effectUnits": {
+                "a76cb31e-0662-4e9e-bf47-52d8ac1a33c7": {
+                    "id": "a76cb31e-0662-4e9e-bf47-52d8ac1a33c7",
+                    "name": "GetDataFromHeaven",
+                    "url": "",
+                    "reducerSectorId": null,
+                    "successActionId": "9eee33ad-e626-45cc-b434-12e96c625b06",
+                    "failActionId": "68ffe277-6b2b-494d-bc6e-dc3d3a70f057",
+                    "inputActionId": "28b5823b-3988-44b7-a039-d7b53b345ad5",
+                    "positionX": 550,
+                    "positionY": 200,
+                    "width": 300,
+                    "height": 250,
+                    "reducerSector": null,
+                    "inputAction": {
+                        "id": "28b5823b-3988-44b7-a039-d7b53b345ad5",
+                        "positionY": 150,
+                        "positionX": 50,
+                        "actionUnitId": "fd1c0f90-e551-4ebc-92f8-054d467d24a3",
+                        "width": 400,
+                        "height": 100,
+                        "actionUnit": {
+                            "id": "fd1c0f90-e551-4ebc-92f8-054d467d24a3",
+                            "name": "GetAllUsers",
+                            "inputInterfaceId": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                            "inputInterface": {
+                                "id": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                                "name": "UserModelHello",
+                                "path": "./types"
+                            }
+                        }
+                    },
+                    "successAction": {
+                        "id": "9eee33ad-e626-45cc-b434-12e96c625b06",
+                        "positionY": 100,
+                        "positionX": 1450,
+                        "actionUnitId": "b344ffe4-c0c0-4d4c-893d-9990f8e71d0a",
+                        "width": 400,
+                        "height": 100,
+                        "actionUnit": {
+                            "id": "b344ffe4-c0c0-4d4c-893d-9990f8e71d0a",
+                            "name": "GetAllUsersSuccess2",
+                            "inputInterfaceId": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                            "inputInterface": {
+                                "id": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                                "name": "UserModelHello",
+                                "path": "./types"
+                            }
+                        }
+                    },
+                    "failAction": {
+                        "id": "68ffe277-6b2b-494d-bc6e-dc3d3a70f057",
+                        "positionY": 300,
+                        "positionX": 1450,
+                        "actionUnitId": "f0a59ac3-22db-48cc-b56c-bcffbe51617b",
+                        "width": 400,
+                        "height": 100,
+                        "actionUnit": {
+                            "id": "f0a59ac3-22db-48cc-b56c-bcffbe51617b",
+                            "name": "GetAllUsersFail",
+                            "inputInterfaceId": "898d09c6-7aaf-4cf6-a590-1f53323350a1",
+                            "inputInterface": {
+                                "id": "898d09c6-7aaf-4cf6-a590-1f53323350a1",
+                                "name": "EndpointErrorModel",
+                                "path": "./types"
+                            }
+                        }
+                    }
+                }
+            },
+            "interfaces": {
+                "449331d6-cf63-4c06-b160-32c2a96cc1c1": {
+                    "id": "449331d6-cf63-4c06-b160-32c2a96cc1c1",
+                    "name": "Hello",
+                    "path": "asd"
+                },
+                "51ffa7ae-3742-4b1e-be8f-1f9d084e4231": {
+                    "id": "51ffa7ae-3742-4b1e-be8f-1f9d084e4231",
+                    "name": "UserModelHello",
+                    "path": "./types"
+                },
+                "aec74a91-7683-4766-abf0-29735268c125": {
+                    "id": "aec74a91-7683-4766-abf0-29735268c125",
+                    "name": "CashModelSS",
+                    "path": ""
+                },
+                "93425c73-f693-40db-b220-a263f264ec2e": {
+                    "id": "93425c73-f693-40db-b220-a263f264ec2e",
+                    "name": "PaginationModel",
+                    "path": ""
+                },
+                "898d09c6-7aaf-4cf6-a590-1f53323350a1": {
+                    "id": "898d09c6-7aaf-4cf6-a590-1f53323350a1",
+                    "name": "EndpointErrorModel",
+                    "path": "./types"
+                },
+                "e5618c45-8db5-4bfd-b17e-e4d601fbc085": {
+                    "id": "e5618c45-8db5-4bfd-b17e-e4d601fbc085",
+                    "name": "UnNamed Effect",
+                    "path": ""
+                }
+            },
+            "reducers": {},
+            "triggerUnits": {},
+            "interfaceInstanceUnits": {},
+            "reducerUnits": {},
+            "interfaceConverterUnits": {
+                "3216cb58-aa01-4b35-b47e-153ecc683641": {
+                    "id": "3216cb58-aa01-4b35-b47e-153ecc683641",
+                    "name": "First Interface Converter",
+                    "path": "ssss",
+                    "inputInterfaceId": "449331d6-cf63-4c06-b160-32c2a96cc1c1",
+                    "outputInterfaceId": "898d09c6-7aaf-4cf6-a590-1f53323350a1"
+                }
+            },
+            "interfaceKeys": {}
+        }
+    }
+}

@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-link {
+  padding: 0.3rem;
+  margin: 0 0.2rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.navbar-link-active{
+  background-color: black;
+  color: white;
+}

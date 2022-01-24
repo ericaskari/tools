@@ -1,0 +1,11 @@
+<mat-toolbar class="app-toolbar">
+    <div>
+        <span>UML NgRx code Generator</span>
+    </div>
+    <div>
+        <a class="navbar-link" routerLinkActive="navbar-link-active" routerLink="/playground">playground</a>
+        <a class="navbar-link" routerLinkActive="navbar-link-active" routerLink="/editor">Editor</a>
+        <button mat-flat-button color="primary" style="padding: 1rem; margin: 0 1rem" (click)="generate()">GENERATE</button>
+    </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

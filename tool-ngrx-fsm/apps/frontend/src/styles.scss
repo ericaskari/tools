@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+app-root {
+  flex: 1;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+.flex-center {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.generic-name {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background: white;
+  border-radius: 10px;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgb(159, 159, 159);
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+
+.instance-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.absolute{
+  position: absolute !important;
+}
+
+.z-1000 {
+  z-index: 1000;
+}

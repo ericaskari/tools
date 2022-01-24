@@ -1,0 +1,40 @@
+<ng-container *ngIf="interfaceSector">
+    <div class="generic-name">Interface</div>
+
+    <div *ngIf="!editMode" class="instance-name">{{ interfaceSector.name }}</div>
+
+    <form *ngIf="editMode" [formGroup]="interfaceFG">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+        </mat-form-field>
+
+        <div *ngFor="let key of keysFormArray.controls">
+            <ng-container [formGroup]="getKeyFormGroup(key)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option *ngFor="let opt of interfaceUnitKeyTypes" [value]="opt">{{ opt }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </ng-container>
+        </div>
+
+        <button mat-icon-button class="flex-center" style="align-self: center" (click)="onAddInterfaceUnitKey()"><mat-icon class="flex-center">add</mat-icon></button>
+        <button mat-flat-button color="primary" style="margin: 0.5rem 0" (click)="onUpdateInterface()">Save</button>
+    </form>
+
+    <app-list-item-panel
+        [showAdd]="false"
+        [showEdit]="!editMode"
+        [showClose]="editMode"
+        [showSave]="editMode"
+        (editClicked)="editMode = !editMode"
+        (closeClicked)="editMode = !editMode"
+        (saveClicked)="onUpdateInterface()"
+    ></app-list-item-panel>
+
+    <!--    <code>-->
+    <!--        <pre>{{ interfaceFG.value | json }}</pre>-->
+    <!--    </code>-->
+</ng-container>

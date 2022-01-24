@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  max-width: 400px;
+  padding: 0.7rem;
+  margin: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  position: absolute;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.interface-key {
+  border: dotted #ccc 2px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}

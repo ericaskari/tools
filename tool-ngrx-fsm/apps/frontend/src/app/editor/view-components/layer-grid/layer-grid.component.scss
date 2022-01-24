@@ -1,0 +1,7 @@
+:host {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(60, 20px);
+  grid-template-rows: repeat(60, 20px);
+  z-index: 5;
+}

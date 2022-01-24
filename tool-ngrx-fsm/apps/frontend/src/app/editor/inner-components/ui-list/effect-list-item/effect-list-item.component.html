@@ -1,0 +1,50 @@
+<ng-container *ngIf="item">
+    <div class="generic-name">Effect</div>
+
+    <div *ngIf="!editMode" class="instance-name">{{ item.name }}</div>
+
+    <form *ngIf="editMode" [formGroup]="effectFG">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Url</mat-label>
+            <input matInput formControlName="url" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>inputAction</mat-label>
+            <mat-select formControlName="inputActionId">
+                <mat-option *ngFor="let opt of actionSectors$ | async" [value]="opt.id">{{ opt.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>successAction</mat-label>
+            <mat-select formControlName="successActionId">
+                <mat-option *ngFor="let opt of actionSectors$ | async" [value]="opt.id">{{ opt.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>failAction</mat-label>
+            <mat-select formControlName="failActionId">
+                <mat-option *ngFor="let opt of actionSectors$ | async" [value]="opt.id">{{ opt.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" style="margin: 0.5rem 0" (click)="onUpdateEffect()">Save</button>
+    </form>
+
+    <app-list-item-panel
+        [showAdd]="false"
+        [showEdit]="!editMode"
+        [showClose]="editMode"
+        [showSave]="editMode"
+        (editClicked)="editMode = !editMode"
+        (closeClicked)="editMode = !editMode"
+        (saveClicked)="onUpdateEffect()"
+    ></app-list-item-panel>
+</ng-container>

@@ -1,0 +1,20 @@
+<app-action-instance
+    *ngFor="let actionUnitInstance of actionUnitInstances$ | async; trackBy: trackByActionUnitInstance"
+    [item]="actionUnitInstance"
+    [cdkDragBoundary]="componentRef"
+    [cdkDragFreeDragPosition]="{ x: actionUnitInstance.positionX, y: actionUnitInstance.positionY }"
+    (saveAction)="onUpdateActionUnitInstance($event)"
+    (cdkDragMoved)="cdkDragMoved($event, actionUnitInstance, 1)"
+    class="action-box"
+    cdkDrag
+></app-action-instance>
+
+<app-effect-instance
+    *ngFor="let effectEl of effectSectors$ | async; trackBy: trackByEffectSector"
+    [item]="effectEl"
+    [cdkDragBoundary]="componentRef"
+    [cdkDragFreeDragPosition]="{ x: effectEl.positionX, y: effectEl.positionY }"
+    (cdkDragMoved)="cdkDragMoved($event, effectEl, 3)"
+    cdkDrag
+></app-effect-instance>
+

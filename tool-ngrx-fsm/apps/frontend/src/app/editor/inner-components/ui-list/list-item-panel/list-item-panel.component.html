@@ -1,0 +1,14 @@
+<button *ngIf="showEdit" mat-mini-fab color="primary" class="flex-center" (click)="editClicked.emit()">
+    <mat-icon class="flex-center">edit</mat-icon>
+</button>
+
+<button *ngIf="showClose" mat-mini-fab color="primary" class="flex-center" (click)="closeClicked.emit()">
+    <mat-icon class="flex-center">close</mat-icon>
+</button>
+
+<button *ngIf="showSave" mat-mini-fab color="primary" class="flex-center" (click)="saveClicked.emit()">
+    <mat-icon class="flex-center">save</mat-icon>
+</button>
+<button *ngIf="showAdd" mat-mini-fab color="primary" class="flex-center" (click)="addClicked.emit()">
+    <mat-icon class="flex-center">add</mat-icon>
+</button>

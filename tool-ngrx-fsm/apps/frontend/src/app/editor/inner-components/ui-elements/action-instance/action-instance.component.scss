@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  position: absolute;
+  background: rgba(246, 161, 251, 0.4);
+  z-index: 100;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+.interface-key {
+  border: dotted #ccc 2px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(30%) translateY(-50%);
+  background-color: white;
+}

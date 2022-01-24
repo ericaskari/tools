@@ -1,0 +1,16 @@
+<div class="container" [style]="style">
+    <span class="name">{{ tooltip }}</span>
+    <button class="flex-center" (click)="clicked.emit()" [disabled]="disableHanger" mat-icon-button [matTooltip]="tooltip" [style]="buttonStyle">
+        <mat-icon class="flex-center" style="font-size: 1rem">{{ icon }}</mat-icon>
+    </button>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 0 1rem;
+        white-space: nowrap;
+    }
+</style>

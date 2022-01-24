@@ -1,0 +1,95 @@
+<div class="sidebar">
+    <div class="sidebar-buttons">
+        <button mat-flat-button color="primary" (click)="createInterfaceUnit()">New Interface</button>
+        <button mat-flat-button color="primary" (click)="createInterfaceConverterUnit()">
+            New Interface Converter
+        </button>
+        <button mat-flat-button color="primary" (click)="createEffectUnit()">New Effect</button>
+        <button mat-flat-button color="primary" (click)="createActionUnit()">New Action</button>
+        <button mat-flat-button color="primary">New Reducer</button>
+    </div>
+
+    <h1 style="text-align: center; padding: 1rem">Interfaces</h1>
+    <app-interface-list-item
+        *ngFor="let interfaceEl of interfaces$ | async; let index = index; trackBy: trackByInterfaceUnitListItem"
+        [interfaceSector]="interfaceEl"
+        style="position: relative"
+    ></app-interface-list-item>
+    <h1 style="text-align: center; padding: 1rem">Actions</h1>
+
+    <app-action-list-item
+        *ngFor="let item of actions$ | async; let index = index; trackBy: trackByActionUnitListItem"
+        [item]="item"
+        (createInstance)="createActionUnitInstance($event)"
+        style="position: relative"
+    ></app-action-list-item>
+
+    <h1 style="text-align: center; padding: 1rem">Effects</h1>
+
+    <app-effect-list-item
+        *ngFor="let item of effects$ | async; let index = index; trackBy: trackByEffectUnitListItem"
+        [item]="item"
+        style="position: relative"
+    ></app-effect-list-item>
+
+    <h1 style="text-align: center; padding: 1rem">Interface Converter</h1>
+
+    <app-interface-converter-list-item
+        *ngFor="
+            let item of interfaceConverters$ | async;
+            let index = index;
+            trackBy: trackByInterfaceConverterUnitListItem
+        "
+        [item]="item"
+        style="position: relative"
+    ></app-interface-converter-list-item>
+</div>
+
+<div class="editor">
+    <app-layer-grid></app-layer-grid>
+
+    <app-layer-relations></app-layer-relations>
+
+    <div
+        class="drag-overlay-wrap"
+        (mouseenter)="dragOverlayMouseEnter($event)"
+        (mouseleave)="dragOverlayMouseLeave($event)"
+        (scroll)="dragOverlayMouseScroll($event)"
+    >
+        <app-layer-drag></app-layer-drag>
+    </div>
+</div>
+<style>
+    :host {
+        position: relative;
+        display: flex;
+        flex: 1;
+    }
+    .editor {
+        display: flex;
+        flex: 1;
+        position: relative;
+    }
+
+    .sidebar {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 1500px;
+    }
+
+    .sidebar-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .drag-overlay-wrap {
+        display: flex;
+        flex: 1;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+    }
+</style>

@@ -1,0 +1,17 @@
+<form [formGroup]="interfaceFG">
+    <h1>Interface</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Interface id</mat-label>
+        <input matInput formControlName="id" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Interface name</mat-label>
+        <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <app-interface-key *ngFor="let key of keysFormArray.controls" [formGroup]="getKeyFormGroup(key)"></app-interface-key>
+
+    <button mat-flat-button class="flex-center" style="align-self: center" (click)="onAddInterfaceUnitKey(mainFormArray)">Add new static key</button>
+</form>
+
+<pre><code [highlight]="interfaceFG.value | json"></code></pre>

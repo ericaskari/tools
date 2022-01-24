@@ -1,0 +1,27 @@
+<ng-container *ngIf="formGroup" [formGroup]="formGroup">
+    <h2>Key</h2>
+    <div style="display: flex; gap: 1rem; flex-direction: column">
+        <div style="display: flex; gap: 1rem">
+            <mat-form-field appearance="fill">
+                <mat-label>Type</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let opt of interfaceUnitKeyTypes" [value]="opt">{{ opt }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" />
+            </mat-form-field>
+        </div>
+        <div style="display: flex; gap: 1rem">
+            <mat-checkbox formControlName="hasNode">hasNode</mat-checkbox>
+            <mat-checkbox formControlName="isFixed">isFixed</mat-checkbox>
+            <mat-checkbox formControlName="isUnion">isUnion</mat-checkbox>
+        </div>
+    </div>
+
+    <div>
+        <button mat-flat-button (click)="onAddInterfaceUnitKey(getFormControlAsFormArray(formGroup.controls.nodes))">Add new static key</button>
+    </div>
+    <app-interface-key *ngFor="let key of getFormControlAsFormArray(formGroup.controls.nodes).controls" [formGroup]="getKeyFormGroup(key)"></app-interface-key>
+</ng-container>

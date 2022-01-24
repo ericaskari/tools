@@ -1,0 +1,12 @@
+<svg style="overflow: visible">
+    <circle
+        *ngFor="let dot of snaps; let index = index; trackBy: gridTrackBy"
+        [style]="dot"
+        [attr.cx]="dot.left"
+        [attr.cy]="dot.top"
+        r="0.5"
+        stroke="black"
+        stroke-width="0.5"
+        fill="transparent"
+    />
+</svg>

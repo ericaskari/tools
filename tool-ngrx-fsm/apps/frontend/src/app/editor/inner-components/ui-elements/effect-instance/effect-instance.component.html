@@ -1,0 +1,40 @@
+<ng-container *ngIf="item">
+    <div class="generic-name">Effect</div>
+    <div class="instance-name">{{ item.name }}</div>
+
+    <app-ui-element-hanger
+        tooltip="Input Action"
+        [position]="inputActionHangerRelativePosition"
+        [isInput]="true"
+        (clicked)="connectionService.effectUnitWantsToAttachInput(item)"
+        [disableHanger]="item.inputActionId !== null"
+        [icon]="connectionService.selectedActionUnitInstanceOutput ? 'radio_button_unchecked' : 'radio_button_checked'"
+    ></app-ui-element-hanger>
+
+    <app-ui-element-hanger
+        tooltip="Output success Action"
+        [position]="successOutputRelativePosition"
+        [isInput]="false"
+        [disableHanger]="item.successActionId !== null"
+        (clicked)="connectionService.effectUnitIsReadyToAttachSuccessOutput(item)"
+    ></app-ui-element-hanger>
+
+    <app-ui-element-hanger
+        tooltip="Output fail Action"
+        [position]="failOutputRelativePosition"
+        [isInput]="false"
+        [disableHanger]="item.failActionId !== null"
+        (clicked)="connectionService.effectUnitIsReadyToAttachFailedOutput(item)"
+    ></app-ui-element-hanger>
+
+    <button
+        mat-icon-button
+        class="flex-center"
+        style="bottom: 0; transform: translateY(50%); position: absolute"
+        color="warn"
+        [disabled]="disableDeleteButton"
+        (click)="deleteEffectUnit()"
+    >
+        <mat-icon class="flex-center">delete</mat-icon>
+    </button>
+</ng-container>
