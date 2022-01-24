@@ -3,4 +3,5 @@
 *.csr
 *.key
 *.crt
+*.cer
 *.srl
