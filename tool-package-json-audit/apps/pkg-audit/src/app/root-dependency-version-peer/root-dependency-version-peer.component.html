@@ -1,0 +1,20 @@
+<ng-container *ngIf="packageJsonDependency">
+  <div *ngIf="(packageJsonDependency | DependencyDetailsFetch: false) | async; let packageJsonDependencyDetails"
+       class="d-flex flex-column flex-1 gap-3 p-3 shadow ">
+
+    <div class="inner-container-details p-3 position-relative">
+      <h5>{{ packageJsonDependencyDetails.name }}</h5>
+      <h5>Version Range: {{ packageJsonDependencyDetails.versionRange }}</h5>
+      <div>compatible versions:
+        {{ packageJsonDependencyDetails.inRangeVersions.length }}
+        /{{ packageJsonDependencyDetails.allVersions.length }}</div>
+    </div>
+
+    <div class="d-flex flex-wrap flex-1 gap-3 p-3 ">
+      <div *ngFor="let compatible of packageJsonDependencyDetails.inRangeVersions"
+           [ngClass]="{'bg-success text-white': isInRangeOfInstalledVersion(compatible.name, compatible.version) && isInRange}"
+           class="flex-1 p-3"> {{ compatible.version }}</div>
+    </div>
+
+  </div>
+</ng-container>

@@ -1,0 +1,9 @@
+<div class="d-flex flex-row gap-2 pb-5">
+  <app-root-dependency *ngFor="let packageJsonDependency of packageJsonDependencies"
+                       [packageJsonDependency]="packageJsonDependency"
+                       [totalCount]="packageJsonDependencies.length"
+                       class="d-flex p-3" style="width: 500px; max-width: 500px; min-width: 500px">
+
+
+  </app-root-dependency>
+</div>
